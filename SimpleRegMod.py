@@ -24,4 +24,4 @@ def simply_toy_reg(gauss_noise, test_size, reg_samples = 100, nb_feats = 1):
     plt.axis("tight")
 
     print("Mean squared error: %.2f" % np.mean((lin_mod.predict(X_test) - y_test) ** 2))
-    print("Variance score: % .2f" % lin_mod.score(X_test, y_test))
+    print("R2 score: % .2f" % lin_mod.score(X_test, y_test))
