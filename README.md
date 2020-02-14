@@ -65,3 +65,31 @@ plt.xlabel("Nb. of Predictions", fontsize=8)
 plt.ylabel("Error Value", fontsize=8)
 plt.axis("tight")
 ```
+
+### Multivariate Regression Gradient Descent
+
+We have to generate random data of an appropriate dimension for this:
+
+```
+X, y = make_regression(n_samples = 100, n_features = 2, noise = 3)
+X_head = np.ones((100,1))
+new_X = np.concatenate((X_head, X), axis=1)
+
+inputvar = np.array(["x0", "x1", "x2"])
+params = np.array(["w0", "w1", "w2"])
+```
+
+The rest is similar for the stochastic gradient descent:
+
+```
+res_stoch, err_stoch = simpreg_custom_graddesc(inputvar, params, train_type="stochastic",
+                              alpha=0.05, train_dt=new_X, label_dt=y, iter_nb=3)
+```
+
+And the batch gradient descent:
+
+```
+res_batch, err_batch = simpreg_custom_graddesc(inputvar, params, train_type="batch",
+                              alpha=0.005, train_dt=new_X, label_dt=y, iter_nb=10)
+```
+
