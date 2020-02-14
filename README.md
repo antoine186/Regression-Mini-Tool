@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-Let us generate some random data upon which we will fit our regression model and perform gradient descent:
+Let us generate some random data upon which we will fit our regression model and perform gradient descent:<br/>
 (Note): the concatenation of an all ones column at the front of the generated data is meant to maintain the contribution of the intercept as 1.
 
 ```
@@ -50,6 +50,9 @@ plt.ylabel("Error Value", fontsize=8)
 plt.axis("tight")
 ```
 
+For the batch gradient descent, the learning rate should be small otherwise it will never converge and reach stratospheric levels of error rates. Furthermore, there should be a more generous number of iterations as this approach learns once after traversing the entire dataset:
+
+```
 res_batch, err_batch = simpreg_custom_graddesc(inputvar, params, train_type="batch",
                               alpha=0.005, train_dt=new_X, label_dt=y, iter_nb=10)
 
@@ -61,3 +64,4 @@ plt.title('Error Rate Over the Number of Predictions')
 plt.xlabel("Nb. of Predictions", fontsize=8)
 plt.ylabel("Error Value", fontsize=8)
 plt.axis("tight")
+```
