@@ -34,7 +34,9 @@ We want to learn a univariate regression:
 inputvar = np.array(["x0", "x1"])
 params = np.array(["w0", "w1"])
 ```
+We can use either stochastic or batch gradient descent. In the former case, we can afford to utilise a relatively larger learning rate. We should however be cautious and not specify too many iterations as this approach learns after each data point:
 
+```
 res_stoch, err_stoch = simpreg_custom_graddesc(inputvar, params, train_type="stochastic",
                               alpha=0.05, train_dt=new_X, label_dt=y, iter_nb=3)
 
@@ -46,6 +48,7 @@ plt.title('Error Rate Over the Number of Predictions')
 plt.xlabel("Nb. of Predictions", fontsize=8)
 plt.ylabel("Error Value", fontsize=8)
 plt.axis("tight")
+```
 
 res_batch, err_batch = simpreg_custom_graddesc(inputvar, params, train_type="batch",
                               alpha=0.005, train_dt=new_X, label_dt=y, iter_nb=10)
