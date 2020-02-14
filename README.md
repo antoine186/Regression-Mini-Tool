@@ -50,7 +50,7 @@ plt.ylabel("Error Value", fontsize=8)
 plt.axis("tight")
 ```
 
-For the batch gradient descent, the learning rate should be small otherwise it will never converge and reach stratospheric levels of error rates. Furthermore, there should be a more generous number of iterations as this approach learns once after traversing the entire dataset:
+For the batch gradient descent, the learning rate should be small otherwise it will never converge and reach stratospheric levels of error rate. Furthermore, there should be a more generous number of iterations as this approach learns once after traversing the entire dataset:
 
 ```
 res_batch, err_batch = simpreg_custom_graddesc(inputvar, params, train_type="batch",
