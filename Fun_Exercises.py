@@ -36,7 +36,7 @@ plt.ylabel("Error Value", fontsize=8)
 plt.axis("tight")
 
 res_batch, err_batch = simpreg_custom_graddesc(inputvar, params, train_type="batch",
-                              alpha=0.05, train_dt=new_X, label_dt=y, iter_nb=10)
+                              alpha=0.005, train_dt=new_X, label_dt=y, iter_nb=10)
 
 x_vals = np.arange(len(err_batch))
 
