@@ -4,7 +4,7 @@
 
 This is a function implementing a regression model obtained via the application of a custom-built gradient descent method.
 
-(Note) This function requires Python 3.6 or higher.
+(Note) This function requires Python 3.6.
 
 ## How to Use
 ### Univariate Regression Gradient Descent
